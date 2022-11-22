@@ -1,17 +1,16 @@
-<div>
-  <app-add-user (addUser)="addUser($event)"></app-add-user>
-</div>
+<!--<div class="container">-->
+<!--  <div>-->
+<!--    <app-users></app-users>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <app-products></app-products>-->
+<!--  </div>-->
+<!--</div>-->
 
-<div class="user-items">
-  <ng-container *ngFor="let user of users; let i = index; let first = first; let last = last">
-    <app-user-item
-      [user]="user"
-      (statusChanged)="changeStatus($event, i)"
-      (roleChanged)="changeRole($event, i)"
-    ></app-user-item>
-  </ng-container>
-</div>
 
-<!--<pre>-->
-<!--  {{users | json}}-->
-<!--</pre>-->
+<div >
+  <a routerLink="/" style="margin-right: 15px">Users</a>
+  <a routerLink="/products">Products</a>
+  <hr>
+  <router-outlet></router-outlet>
+</div>

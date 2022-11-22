@@ -1,5 +1,5 @@
 import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
-import {UserRole} from "../interfaces";
+import {UserRole} from "../../interfaces";
 
 @Directive({
   selector: '[appRolePermission]'
