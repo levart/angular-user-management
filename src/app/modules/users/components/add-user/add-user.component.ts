@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {UserRole} from "../../../../interfaces";
 import {UserService} from "../../../../services/user.service";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-add-user',
@@ -15,13 +16,16 @@ export class AddUserComponent {
   ) {
   }
 
-  addUserHandler(fullName: string, role: string){
-    if(!fullName || !role) return;
+  addUserHandler(form: NgForm) {
+    form.form.markAsTouched()
+    if (form.invalid) return;
+    const {fullName, role} = form.value;
     this.userService.addUser({
       fullName: fullName,
       role: role as UserRole,
       status: 'inactive'
     })
+    form.reset()
   }
 
 }

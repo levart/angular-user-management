@@ -2,4 +2,8 @@
   display: flex;
   gap: 15px;
   width: 400px;
+
+  .error {
+    border: 1px solid red;
+  }
 }

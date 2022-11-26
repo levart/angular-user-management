@@ -14,6 +14,5 @@ import {RolePermissionDirective} from "./directives";
   exports: [
     RolePermissionDirective
   ]
-
 })
 export class SharedModule { }

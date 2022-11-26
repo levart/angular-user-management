@@ -9,6 +9,7 @@ import {SharedModule} from "../../shared/shared.module";
 import {UserService} from "../../services/user.service";
 import {RouterModule} from "@angular/router";
 import {ProductsComponent} from "../products/products.component";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -23,6 +24,7 @@ import {ProductsComponent} from "../products/products.component";
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: '',

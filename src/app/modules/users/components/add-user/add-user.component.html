@@ -1,10 +1,24 @@
-<div class="container">
-  <input #fullName>
-  <select #role>
+<form class="container" (ngSubmit)="addUserHandler(f)" #f="ngForm">
+  <input
+
+    name="fullName" ngModel required
+    [ngClass]="{
+      'error': f.controls['fullName']?.invalid && f.touched
+    }"
+  >
+  <select name="role"
+          [ngClass]="{
+            'error': f.controls['role']?.invalid && f.touched
+          }"
+          ngModel required>
     <option value="admin">Admin</option>
     <option value="user">User</option>
     <option value="guest">Guest</option>
   </select>
+  <button type="submit">Add User</button>
+</form>
+<div *ngIf="f.invalid && f.touched">
+  <div *ngIf="f.controls['fullName'].invalid">fullName is required</div>
+  <div *ngIf="f.controls['role'].invalid">role is required</div>
 
-  <button (click)="addUserHandler(fullName.value, role.value)">Add User</button>
 </div>
